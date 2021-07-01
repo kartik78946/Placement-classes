@@ -7,7 +7,7 @@ public:
         for(i=0;i<=s.size();i++)
         {
             if(z<k){
-            if(s[i]!=' ' && i<s.size())
+            if(s[i]!=' ')
             {
                 s1 = s1+s[i];
             }
