@@ -1,0 +1,75 @@
+class Solution {
+public:
+    int numRookCaptures(vector<vector<char>>& board) {
+        int i,j,x=0,y=0,count=0;
+        for(i=0;i<8;i++)
+        {
+            for(j=0;j<8;j++)
+            {
+                if(board[i][j]=='R')
+                {
+                    x = i;
+                    y = j;
+                    break;
+                }
+            }
+        }
+        int a = x;
+        while(a!=-1)
+        {
+            if(board[a][y]=='p')
+            {
+                count++;
+                break;
+            }
+            if(board[a][y]=='B')
+            {
+                break;
+            }
+            a--;
+        }
+        int b = x;
+        while(b!=8)
+        {
+            if(board[b][y]=='p')
+            {
+                count++;
+                break;
+            }
+            if(board[b][y]=='B')
+            {
+                break;
+            }
+            b++;
+        }
+        int c = y;
+        while(c!=-1)
+        {
+            if(board[x][c]=='p')
+            {
+                count++;
+                break;
+            }
+            if(board[x][c]=='B')
+            {
+                break;
+            }
+            c--;
+        }
+        int d = y;
+        while(d!=8)
+        {
+            if(board[x][d]=='p')
+            {
+                count++;
+                break;
+            }
+            if(board[x][d]=='B')
+            {
+                break;
+            }
+            d++;
+        }
+        return count;
+    }
+};
